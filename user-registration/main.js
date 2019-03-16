@@ -1,4 +1,4 @@
-const myForm = document.querySelector('#submit');
+const myForm = document.querySelector('#my-form');
 const nameInput = document.querySelector('#name');
 const ageInput = document.querySelector('#age');
 const emailInput = document.querySelector('#email');
@@ -6,10 +6,10 @@ const mobileInput = document.querySelector('#mobile');
 const msg = document.querySelector('.notification');
 const userList = document.querySelector('.list');
 
-myForm.addEventListener('click', onSubmit);
+myForm.addEventListener('submit', onSubmit);
 function onSubmit(e) {
     e.preventDefault();
-    if (nameInput.value.length === 0 || emailInput.value.length === 0) {
+    if (nameInput.value.length === 0 || emailInput.value.length === 0 || ageInput.value.length == 0 || mobileInput.value.length === 0) {
         msg.classList.add('is-danger');
         msg.style.display = 'block';
         msg.innerHTML = 'Please enter all fields';
